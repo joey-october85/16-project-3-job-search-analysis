@@ -31,7 +31,7 @@ d3.json("http://127.0.0.1:5000/api/title_count", function(data) {
             pad: 1,
         },
         title: {
-            text: 'Maximum/Minimum Salary per Position'
+            text: 'Top Search Results Percentage'
     
         },
         font: {
