@@ -78,5 +78,28 @@ ON t_max.title = t_min.title;
     
     return jsonify({x:df1[x].tolist() for x in df1})
 
+@app.route("/api/mid_values", methods=['GET'])
+@cross_origin()
+def mid_values():
+    df = pd.read_sql("""
+SELECT mid_range.title, mid_range 
+FROM(
+SELECT 'Business Analyst' as title, CAST((MIN(salary_min) + MAX(salary_max))/2 AS DECIMAL (10,2)) AS mid_range FROM results_78205
+WHERE title LIKE 'Business Analyst%%'
+UNION ALL
+SELECT 'Remote Data Analyst' as title, CAST((MIN(salary_min) + MAX(salary_max))/2 AS DECIMAL (10,2)) AS mid_range FROM results_78205
+WHERE title LIKE 'Remote Data Analyst%%'
+UNION ALL
+SELECT 'Data Analyst' as title, CAST((MIN(salary_min) + MAX(salary_max))/2 AS DECIMAL (10,2)) AS mid_range FROM results_78205
+WHERE title LIKE 'Data Analyst%%'
+UNION ALL
+SELECT 'Sr Functional Analyst' as title, CAST((MIN(salary_min) + MAX(salary_max))/2 AS DECIMAL (10,2)) AS mid_range FROM results_78205
+WHERE title LIKE 'Sr Functional Analyst%%') AS mid_range;
+        
+""", con=engine)
+    return jsonify({x:df[x].tolist() for x in df})
+
+
+
 if __name__ == '__main__':
     app.run(debug=True)

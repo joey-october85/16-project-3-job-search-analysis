@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <link rel="stylesheet" href="./static/css/style.css">
   <title>Job Search Data</title>
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+  
   <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
 </head>
 
@@ -24,27 +24,19 @@
               <a href="#">home</a>
             </li>
             <li>
-              <a href="#">about</a>
+              <a href="./about.html">about</a>
             </li>
-            <!-- <li>
-              <a href="#" class="active">projects</a>
-            </li> -->
+            
             <li>
               <a href="./contact.html">contact</a>
             </li>
-            <!-- <li><a href="#">blog</a></li> -->
+            
           </ul>
           <ul class="options">
             <li>
               week 10 | project 3
             </li>
-            <!-- <li>
-              <a href="#" class="notification">
-                <span class="material-icons">
-                  notifications
-                </span>
-              </a>
-            </li> -->
+            
             <li> <a href="https://bootcamp.utsa.edu/data/" target="_blank">
                 <img src="./images/Icon - utsa-logo.png" alt="user" class="profile-img"></a></li>
           </ul>
@@ -116,26 +108,8 @@
 
   <main class="dashboard">
     <div class="panel list" id="dash_id">
-      <!-- <li>
-        <h2>Mid-Range Salary</h2>
-        <span></span>
-      </li>
-      <li>
-        <h4>Business Analyst</h4>
-        <span>$89,539.57</span>
-      </li>
-      <li>
-        <h4>Remote Data Analyst</h4>
-        <span>$64,412.50</span>
-      </li>
-      <li>
-        <h4>Data Analyst</h4>
-        <span>$75,849.24</span>
-      </li>
-      <li>
-        <h4>Sr Functional Analyst</h4>
-        <span>$95,869.12</span>
-      </li> -->
+      <li><h2><u>Top Search Results (Data Analyst)</u></h2></li>
+      
     </div>
 
     <div id="barChart"></div>
@@ -143,47 +117,20 @@
 
     
 
-    <div class="result_cards">
-      <div>
-        <h4>Business Analyst</h4>
-        <h1>38</h1>
-        <small>total results</small>
-      </div>
-      <div>
-        <h4>Remote Data Analyst</h4>
-        <h1>5</h1>
-        <small>total results</small>
-      </div>
-      <div>
-        <h4>Data Analyst</h4>
-        <h1>4</h1>
-        <small>total results</small>
-      </div>
-      <div>
-        <h4>Sr Functional Analyst</h4>
-        <h1>3</h1>
-        <small>total results</small>
-      </div>
+    <div class="result_cards" id="mid_values">
+     
     </div>
 
  
 
     <div class="panel text text-horizontal">
-      <h1>Details</h1>
+      <h1>details</h1>
       
       <p>
-        Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Possimus dignissimos odit
-        provident unde alias reprehenderit, molestias
-        eveniet vero fugit vel quod iure facilis ab
-        at beatae est quis fugiat. Nesciunt!
+        Search results data for "analyst" jobs in San Antonio, Texas
       </p>
       <p>
-        Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Possimus dignissimos odit
-        provident unde alias reprehenderit, molestias
-        eveniet vero fugit vel quod iure facilis ab
-        at beatae est quis fugiat. Nesciunt!
+        Data source: <a href="https://developer.adzuna.com/overview" target="_blank">Adzuna public API</a>
       </p>
     </div>
 
@@ -193,7 +140,7 @@
 
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <script src="https://cdn.plot.ly/plotly-2.4.2.min.js"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script> -->
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
   <script src="./static/js/app.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
