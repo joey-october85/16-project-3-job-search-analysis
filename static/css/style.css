@@ -139,23 +139,10 @@ ul {
     height: 75%;
 }
 
-/*notification*/
-.notification {
-    position: relative;
-}
-
-.notification::before {
-    content: "5";
-    position: absolute;
-    top: -1.5em;
-    right: -0.5em;
-    width: 1.5em;
-    height: 1.5em;
-    background: #ea335d;
-    color: #fff;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 22px;
+.student .student-card:hover {
+    box-shadow: 
+    -5px 5px 10px #6b77d0,
+    5px -5px 10px #6b77d0;
 }
 
 /* sidebar */
@@ -281,42 +268,10 @@ ul {
     color: #ea335d;
 }
 
-/* goal panel */
-.goal {padding: 1em;
-}
-
-.goals,
-.goal,
-.goal-title {
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
-}
-
-.goal-title h4:nth-child(1) {
-    margin: 0 2em 0 0;
-}
-
-.goal-title {
-    margin-bottom: 0.5em;
-}
-
-.goals {
-    flex-direction: column;
-}
-
-.goal {
-    margin: 1em 0;
-}
-
-.goal span {
-    color: #03dcee;
-    margin-right: 0.5em;
-    font-size: 2em;
-}
 
 
-/* sales panel */
+
+/* results panel */
 .result_cards {
     grid-column-start: span 3;
     display: grid;

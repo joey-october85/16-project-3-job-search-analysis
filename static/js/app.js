@@ -1,3 +1,4 @@
+/** define buttons and event listeners**/
 const menu = document.querySelector(".menu");
 const menuBtn = document.querySelector(".menu-btn");
 
@@ -8,6 +9,7 @@ menuBtn.addEventListener("click", () => {
 /*charts*/
 const config = { responsive: true};
 
+// use d3 to call api, itterate through the data, select specific element(s) in our HTML and append data
 d3.json("http://127.0.0.1:5000/api/title_count", function(data) {
     console.log(data);
     console.log( data['count'].length)
@@ -17,7 +19,7 @@ d3.json("http://127.0.0.1:5000/api/title_count", function(data) {
         _li.append('h4').text(data['title'][x]);
         _li.append('span').text(data['count'][x]);
     }
-
+// define chart layout
     const pieChartLayout = {
         paper_bgcolor: "#172042",
         plot_bgcolor: "#172042",
@@ -42,7 +44,7 @@ d3.json("http://127.0.0.1:5000/api/title_count", function(data) {
     };
     
     
-    
+  // use API data to populate values and labels  
     const donutChartData = [
         {
             values: data['count'],
@@ -51,16 +53,17 @@ d3.json("http://127.0.0.1:5000/api/title_count", function(data) {
             type: "pie",
         },
     ];
-
+// plot the chart
     Plotly.newPlot("donutChart", donutChartData, pieChartLayout);
     
 
     
   });
-
+// use d3 to call api, 
   d3.json("http://127.0.0.1:5000/api/min_max", function(data) {
     console.log(data);
     
+    // populate x and y values with data from the api and define other parameters
     const barChartTrace1 = {
         x: data['title'],
         y: data['max_salary'],
@@ -72,6 +75,7 @@ d3.json("http://127.0.0.1:5000/api/title_count", function(data) {
     
     };
     
+    //populate x and y values with data from the api and define other parameters
     const barChartTrace2 = {
         x: data['title'],
         y: data['min_salary'],
@@ -85,6 +89,7 @@ d3.json("http://127.0.0.1:5000/api/title_count", function(data) {
     
     const barChartData = [barChartTrace1, barChartTrace2];
     
+    // define layout properties
     const layout = {
         barmode: "grouped",
         paper_bgcolor: "#172042",
@@ -107,14 +112,18 @@ d3.json("http://127.0.0.1:5000/api/title_count", function(data) {
         },
     };
     
+    // plot bar chart
     Plotly.newPlot("barChart", barChartData, layout, config);
 
   });
   
+  
+  /* variable will format double precision value from query into USD Currency format*/
   const formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD'
   })
+
 
   d3.json("http://127.0.0.1:5000/api/mid_values", function(data) {
     console.log(data);

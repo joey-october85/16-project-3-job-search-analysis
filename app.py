@@ -1,3 +1,5 @@
+
+## import dependancies
 import numpy as np
 import pandas as pd
 import sqlalchemy
@@ -9,16 +11,18 @@ from config import app_id
 from flask import Flask, jsonify
 from flask_cors import CORS, cross_origin
 
+# Create an app, being sure to pass __name__
 app = Flask(__name__)
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
+
 #################################################
 # Flask Routes
 #################################################
-
+# create the engine
 engine = create_engine("postgresql+psycopg2://postgres:postgres@localhost:5432/jobsearch")
 
-
+#build welcome route
 @app.route("/")
 def welcome():
     
@@ -30,6 +34,7 @@ def welcome():
     title_count()
     return None
 
+#build title_count route instructing to read the SQL query and return jsonified results
 @app.route("/api/title_count", methods=['GET'])
 @cross_origin()
 def title_count():
@@ -42,6 +47,7 @@ LIMIT 9;
 """, con=engine)
     return jsonify({x:df[x].tolist() for x in df})
 
+# repeat with min_max query
 @app.route("/api/min_max", methods=['GET'])
 @cross_origin()
 def min_max():
@@ -78,6 +84,7 @@ ON t_max.title = t_min.title;
     
     return jsonify({x:df1[x].tolist() for x in df1})
 
+# repeat with mid_values query
 @app.route("/api/mid_values", methods=['GET'])
 @cross_origin()
 def mid_values():
