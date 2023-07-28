@@ -1,10 +1,13 @@
 # Job-Search-Analysis
 
-html/css and javascript template/instructional video
+### html/css and javascript template/instructional video
 https://www.youtube.com/watch?v=ehAaFAASCeM&t=84s
 
-Tutor Assistance
+### Tutor Assistance
 Saad Khan
 
-TA Support
+### TA Support
 Manuel Eduardo Sotelo Cervantes
+
+###  Adzuna Open API
+https://developer.adzuna.com/overview

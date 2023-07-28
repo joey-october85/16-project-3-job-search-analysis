@@ -344,9 +344,9 @@ ul {
 }
 
 .student-social-icon {
-    height: 40px;
-    width: 40px;
-    border-radius: 10px;
+    height: 30px;
+    width: 30px;
+    border-radius: 3px;
     box-shadow:
     0 0 10px rgba(0,0,0,0.5),
     inset 5px 5px 0 #10183b,

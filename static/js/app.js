@@ -103,7 +103,7 @@ d3.json("http://127.0.0.1:5000/api/title_count", function(data) {
             pad: 1,
         },
         title: {
-            text: 'Maximum/Minimum Salary per Position'
+            text: 'Maximum/Minimum Salary of Top 4 Positions'
 
         },
         

@@ -101,8 +101,7 @@ SELECT 'Data Analyst' as title, CAST((MIN(salary_min) + MAX(salary_max))/2 AS DE
 WHERE title LIKE 'Data Analyst%%'
 UNION ALL
 SELECT 'Sr Functional Analyst' as title, CAST((MIN(salary_min) + MAX(salary_max))/2 AS DECIMAL (10,2)) AS mid_range FROM results_78205
-WHERE title LIKE 'Sr Functional Analyst%%') AS mid_range;
-        
+WHERE title LIKE 'Sr Functional Analyst%%') AS mid_range;     
 """, con=engine)
     return jsonify({x:df[x].tolist() for x in df})
 
